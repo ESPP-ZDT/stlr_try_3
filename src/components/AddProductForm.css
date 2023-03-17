@@ -1,0 +1,61 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  padding: 20px;
+  background-color: #222; /* dark background color */
+  color: #ddd; /* light text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
+  animation: fadeIn 0.5s ease-out; /* fade-in animation */
+  font-family: "Space Mono", monospace; /* retrofuturistic font */
+  border-radius: 5px;
+}
+
+form label {
+  font-weight: bold;
+  text-transform: uppercase; /* uppercase labels */
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+  border: none;
+  background-color: #333; /* dark input background color */
+  color: #ddd; /* light input text color */
+  padding: 10px;
+  font-size: 14px;
+  font-family: "Space Mono", monospace; /* retrofuturistic font */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #ffea00; /* yellow submit button color */
+  color: #222; /* dark submit button text color */
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* button hover animation */
+}
+
+form input[type="submit"]:hover {
+  transform: translateY(-3px); /* move button up slightly on hover */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* stronger shadow effect on hover */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
