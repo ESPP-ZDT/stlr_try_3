@@ -3,6 +3,7 @@ import axios from "axios";
 import { Product } from "./types";
 import ProductTable from "./components/ProductTable";
 import AddProductForm from "./components/AddProductForm";
+import "./ProductListView.css"; // Import CSS file
 
 const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -35,7 +36,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <input type="text" value={searchQuery} onChange={handleSearch}  />
+      <input type="text" value={searchQuery} onChange={handleSearch} className="search-bar" />
       <AddProductForm onAdd={handleAdd} />
       <ProductTable products={filteredProducts} onDelete={handleDelete} />
     </div>

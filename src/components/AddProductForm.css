@@ -10,12 +10,14 @@ form {
   animation: fadeIn 0.5s ease-out; /* fade-in animation */
   font-family: "Space Mono", monospace; /* retrofuturistic font */
   border-radius: 5px;
+  margin-bottom: 20px; /* add some bottom margin */
 }
 
 form label {
   font-weight: bold;
   text-transform: uppercase; /* uppercase labels */
   margin-bottom: 10px;
+  letter-spacing: 1px; /* add some letter spacing */
 }
 
 form input[type="text"],
@@ -28,6 +30,7 @@ form input[type="number"] {
   font-family: "Space Mono", monospace; /* retrofuturistic font */
   border-radius: 5px;
   margin-bottom: 10px;
+  width: 100%; /* make input fields full width */
 }
 
 form input[type="submit"] {
@@ -41,6 +44,7 @@ form input[type="submit"] {
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* button hover animation */
+  margin-top: 20px; /* add some top margin */
 }
 
 form input[type="submit"]:hover {
