@@ -17,6 +17,7 @@ const AddProductForm: React.FC<Props> = ({ onAdd }) => {
     brand: "",
     category: "",
   });
+  const [isOpen, setIsOpen] = useState<boolean>(false); // Add isOpen state
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -41,66 +42,76 @@ const AddProductForm: React.FC<Props> = ({ onAdd }) => {
     });
   };
 
+  // Add toggle function to toggle isOpen state
+  const toggleForm = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="title"
-        value={product.title}
-        onChange={handleChange}
-        placeholder="Title"
-        required
-      />
-      <input
-        type="text"
-        name="description"
-        value={product.description}
-        onChange={handleChange}
-        placeholder="Description"
-        required
-      />
-      <input
-        type="number"
-        name="price"
-        value={product.price}
-        onChange={handleChange}
-        placeholder="Price"
-        required
-      />
-      <input
-        type="number"
-        name="rating"
-        value={product.rating}
-        onChange={handleChange}
-        placeholder="Rating"
-        required
-      />
-      <input
-        type="number"
-        name="stock"
-        value={product.stock}
-        onChange={handleChange}
-        placeholder="Stock"
-        required
-      />
-      <input
-        type="text"
-        name="brand"
-        value={product.brand}
-        onChange={handleChange}
-        placeholder="Brand"
-        required
-      />
-      <input
-        type="text"
-        name="category"
-        value={product.category}
-        onChange={handleChange}
-        placeholder="Category"
-        required
-      />
-      <button type="submit">Add Product</button>
-    </form>
+    <div className="add-product-form-container">
+      <button onClick={toggleForm}>{isOpen ? 'Hide Form' : 'Add Product'}</button>
+      {isOpen && (
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="title"
+            value={product.title}
+            onChange={handleChange}
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            name="description"
+            value={product.description}
+            onChange={handleChange}
+            placeholder="Description"
+            required
+          />
+          <input
+            type="number"
+            name="price"
+            value={product.price}
+            onChange={handleChange}
+            placeholder="Price"
+            required
+          />
+          <input
+            type="number"
+            name="rating"
+            value={product.rating}
+            onChange={handleChange}
+            placeholder="Rating"
+            required
+          />
+          <input
+            type="number"
+            name="stock"
+            value={product.stock}
+            onChange={handleChange}
+            placeholder="Stock"
+            required
+          />
+          <input
+            type="text"
+            name="brand"
+            value={product.brand}
+            onChange={handleChange}
+            placeholder="Brand"
+            required
+          />
+          <input
+            type="text"
+            name="category"
+            value={product.category}
+            onChange={handleChange}
+            placeholder="Category"
+            required
+          />
+          <button type="submit">Add Product</button>
+        </form>
+      )}
+    </div>
   );
 };
 
