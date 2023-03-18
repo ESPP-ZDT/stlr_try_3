@@ -35,13 +35,19 @@ const ProductList = () => {
     setProducts([...products, product]);
   };
 
+  if (error) {
+    return (
+      <div>
+        <div>Error: {error}</div>
+        <AddProductForm onAdd={handleAdd} />
+        <ProductTable products={products} onDelete={handleDelete} />
+      </div>
+    );
+  }
+
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   return (
     <div>
