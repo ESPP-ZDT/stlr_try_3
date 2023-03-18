@@ -24,8 +24,14 @@ const ProductList = () => {
   }, []);
 
   const handleDelete = (productId: number) => {
-    setProducts(products.filter((product) => product.id !== productId));
+    const productIndex = products.findIndex((product) => product.id === productId);
+    if (productIndex !== -1) {
+      const updatedProducts = [...products];
+      updatedProducts.splice(productIndex, 1);
+      setProducts(updatedProducts);
+    }
   };
+  
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
