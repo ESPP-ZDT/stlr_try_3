@@ -90,3 +90,45 @@ td.delete-button button::before {
   transform-origin: left;
   animation: rowDelete 0.5s linear;
 }
+
+
+
+.sort-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #ff1744;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+  margin: 0 10px;
+}
+
+.sort-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sort-button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 23, 68, 0.5);
+  transform-origin: left;
+  animation: rowDelete 0.5s linear;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.sort-button:hover::before {
+  opacity: 1;
+}
