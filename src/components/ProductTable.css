@@ -13,9 +13,11 @@ th {
   text-transform: uppercase; 
   border: none;
   color: #ffea00; 
+  background: conic-gradient(from 0.01turn at 10% 30%,rgb(37, 31, 37), #1c1c1c, #1c1c1c, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  
   letter-spacing: 1px;
   font-size: 14px;
-  background-color: #282828; 
+   
   padding: 10px;
 }
 
@@ -23,6 +25,8 @@ td {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
   padding: 10px;
+  background-image: linear-gradient(to bottom, #1c1c1c, rgba(0, 0, 0, 0.3));
+  
 }
 
 button {
@@ -43,33 +47,8 @@ button:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes rowDelete {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(0.8);
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
-    display: none;
-  }
-}
 
 td.delete-button {
   position: relative;
@@ -95,10 +74,7 @@ td.delete-button button::before {
 }
 
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
+
 
 @keyframes fadeIn {
   from {
@@ -124,6 +100,7 @@ button:hover {
     transform: scale(0.5);
     opacity: 0;
     display: none;
+    background: linear-gradient(to right, rgba(255, 23, 68, 0.5) 0%, rgba(255, 23, 68, 0.7) 50%, rgba(255, 23, 68, 0.5) 100%);
   }
 }
 

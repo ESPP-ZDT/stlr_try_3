@@ -1,6 +1,9 @@
 /* App.css */
 body {
-  background: linear-gradient(to bottom, #0c0c0c, #767575);
+    
+    
+    background: repeating-radial-gradient(circle, #1c1c1c, rgba(0, 0, 0, 0.3) 60%);
+  
   background-attachment: fixed;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
