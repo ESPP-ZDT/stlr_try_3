@@ -57,16 +57,19 @@ button:hover {
 @keyframes rowDelete {
   0% {
     transform: scale(1);
+    opacity: 1;
   }
   50% {
-    transform: scale(0.8);
+    transform: scale(1.2);
+    opacity: 0.5;
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.5);
     opacity: 0;
     display: none;
   }
 }
+
 
 td.delete-button {
   position: relative;
@@ -77,8 +80,22 @@ td.delete-button button {
   position: relative;
   z-index: 1;
 }
-
+/*
 td.delete-button button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 23, 68, 0.5) 0%, rgba(255, 23, 68, 0.7) 50%, rgba(255, 23, 68, 0.5) 100%);
+  transform-origin: left;
+  animation: rowDelete 0.5s ease-in-out;
+}
+*/
+
+td.delete-button button:active::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -86,9 +103,18 @@ td.delete-button button::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ff1744;
+  background-color: #acacac;
   transform-origin: left;
-  animation: rowDelete 0.5s linear;
+  animation: deleteAnimate 0.5s ease-in-out;
+}
+
+@keyframes deleteAnimate {
+  0% {
+    background-color: #bababa;
+  }
+  100% {
+    background-color: #ff1744;
+  }
 }
 
 
