@@ -23,6 +23,11 @@ th {
   padding: 10px;
 }
 
+th:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
 td {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
@@ -60,6 +65,7 @@ td.delete-button {
 td.delete-button button {
   position: relative;
   z-index: 1;
+  float: right; /* Add this line to float the button to the right */
 }
 
 td.delete-button button::before {
