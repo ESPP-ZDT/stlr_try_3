@@ -25,7 +25,7 @@ td {
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
   padding: 10px;
-  background-image: linear-gradient(to bottom, #1c1c1c, rgba(0, 0, 0, 0.3));
+  background: conic-gradient(from 0.2turn at 99% 100%,rgb(37, 31, 37), #1c1c1c, #1c1c1c, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   
 }
 

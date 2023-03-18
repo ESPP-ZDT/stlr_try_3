@@ -2,11 +2,11 @@
 body {
     
     
-    background: repeating-radial-gradient(circle, #1c1c1c, rgba(0, 0, 0, 0.3) 70%);
+    background: repeating-radial-gradient(circle, #1c1c1cca, rgba(52, 109, 233, 0.929) 70%);
   
   background-attachment: fixed;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #fff;
+  color: rgb(205, 205, 205);
 }
 
 
