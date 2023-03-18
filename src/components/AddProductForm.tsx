@@ -30,6 +30,7 @@ const AddProductForm: React.FC<Props> = ({ onAdd }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     onAdd(product);
+    setIsOpen(false); // Reset isOpen state
     setProduct({
       id: 0,
       title: "",
@@ -44,12 +45,26 @@ const AddProductForm: React.FC<Props> = ({ onAdd }) => {
 
   // Add toggle function to toggle isOpen state
   const toggleForm = () => {
-    setIsOpen(!isOpen);
+    if (isOpen) {
+      setIsOpen(false);
+      setProduct({
+        id: 0,
+        title: "",
+        description: "",
+        price: 0,
+        rating: 0,
+        stock: 0,
+        brand: "",
+        category: "",
+      });
+    } else {
+      setIsOpen(true);
+    }
   };
 
   return (
     <div className="add-product-form-container">
-      <button onClick={toggleForm}>{isOpen ? 'Hide Form' : 'Add Product'}</button>
+      <button onClick={toggleForm}>{isOpen ? 'Cancel Submission' : 'Add Product'}</button>
       {isOpen && (
         <form onSubmit={handleSubmit}>
           <input
@@ -108,7 +123,7 @@ const AddProductForm: React.FC<Props> = ({ onAdd }) => {
             placeholder="Category"
             required
           />
-          <button type="submit">Add Product</button>
+          <button type="submit">{isOpen ? 'Add Product' : 'Cancel'}</button>
         </form>
       )}
     </div>
@@ -116,3 +131,4 @@ const AddProductForm: React.FC<Props> = ({ onAdd }) => {
 };
 
 export default AddProductForm;
+
