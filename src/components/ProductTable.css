@@ -1,42 +1,99 @@
 table {
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   margin-top: 20px;
-  font-family: 'Roboto', sans-serif;
-  background-color: #1d1f21;
-  color: #fff;
+  font-family: "Roboto Mono", monospace; 
+  background-color: #1c1c1c; 
+  color: #ccc; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-out; 
 }
 
 th {
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: uppercase; 
   border: none;
-  color: #ff1744;
-  letter-spacing: 2px;
+  color: #ffea00; 
+  letter-spacing: 1px;
   font-size: 14px;
-  background-color: #151515;
-  padding: 20px;
+  background-color: #282828; 
+  padding: 10px;
 }
 
 td {
   border: none;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
   padding: 10px;
 }
 
 button {
-  background-color: #ff1744;
-  color: #fff;
+  background-color: #ffea00; 
+  color: #1c1c1c; 
   border: none;
   padding: 10px 15px;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 20px;
+  border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; 
 }
+
+button:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rowDelete {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    display: none;
+  }
+}
+
+td.delete-button {
+  position: relative;
+  overflow: hidden;
+}
+
+td.delete-button button {
+  position: relative;
+  z-index: 1;
+}
+
+td.delete-button button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d32f2f;
+  transform-origin: left;
+  animation: rowDelete 0.5s linear;
+}
+
 
 button:hover {
   transform: translateY(-3px);
@@ -70,7 +127,6 @@ button:hover {
   }
 }
 
-
 td.delete-button {
   position: relative;
   overflow: hidden;
@@ -80,7 +136,10 @@ td.delete-button button {
   position: relative;
   z-index: 1;
 }
-/*
+
+
+
+
 td.delete-button button::before {
   content: "";
   position: absolute;
@@ -93,7 +152,7 @@ td.delete-button button::before {
   transform-origin: left;
   animation: rowDelete 0.5s ease-in-out;
 }
-*/
+
 
 td.delete-button button:active::before {
   content: "";
@@ -118,43 +177,3 @@ td.delete-button button:active::before {
 }
 
 
-
-.sort-button {
-  position: relative;
-  display: inline-block;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 20px;
-  color: #fff;
-  background-color: #ff1744;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease-in-out;
-  margin: 0 10px;
-}
-
-.sort-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.sort-button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 23, 68, 0.5);
-  transform-origin: left;
-  animation: rowDelete 0.5s linear;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-}
-
-.sort-button:hover::before {
-  opacity: 1;
-}

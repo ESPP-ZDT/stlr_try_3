@@ -8,7 +8,6 @@ interface Props {
 }
 
 const ProductTable: React.FC<Props> = ({ products, onDelete }) => {
-
   return (
     <div>
       <table>

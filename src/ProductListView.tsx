@@ -24,14 +24,15 @@ const ProductList = () => {
   }, []);
 
   const handleDelete = (productId: number) => {
-    const productIndex = products.findIndex((product) => product.id === productId);
+    const productIndex = products.findIndex(
+      (product) => product.id === productId
+    );
     if (productIndex !== -1) {
       const updatedProducts = [...products];
       updatedProducts.splice(productIndex, 1);
       setProducts(updatedProducts);
     }
   };
-  
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -58,8 +59,14 @@ const ProductList = () => {
   return (
     <div>
       <>
-      <label htmlFor="searchInput">Search by title:</label>
-      <input id="searchInput" type="text" value={searchQuery} onChange={handleSearch} className="search-bar" />
+        <label htmlFor="searchInput">Search by title:</label>
+        <input
+          id="searchInput"
+          type="text"
+          value={searchQuery}
+          onChange={handleSearch}
+          className="search-bar"
+        />
       </>
       <AddProductForm onAdd={handleAdd} />
       <ProductTable products={filteredProducts} onDelete={handleDelete} />
