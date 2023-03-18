@@ -1,149 +1,104 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+/* App.css */
+body {
+    background-color: #1c1c1c; /* dark background color */
+    color: #ccc; /* light text color */
+    font-family: "Roboto Mono", monospace; /* futuristic font */
   }
   
-  body {
-    background-color: #2f2f2f;
-    color: rgb(222, 71, 71);
+  /* ProductTable.css */
+  table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: "Roboto Mono", monospace; /* futuristic font */
+    background-color: #1c1c1c; /* dark background color */
+    color: #ccc; /* light text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
+    animation: fadeIn 0.5s ease-out; /* fade-in animation */
   }
   
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 10px 20px;
-    position: fixed;
+  th {
+    font-weight: bold;
+    text-transform: uppercase; /* uppercase headers */
+    border: none;
+    color: #ffea00; /* yellow text color */
+    letter-spacing: 1px;
+    font-size: 14px;
+    background-color: #282828; /* dark header background color */
+    padding: 10px;
+  }
+  
+  td {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* dotted border effect */
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #ffea00; /* yellow button color */
+    color: #1c1c1c; /* dark button text color */
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* button hover animation */
+  }
+  
+  button:hover {
+    transform: translateY(-3px); /* move button up slightly on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* stronger shadow effect on hover */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rowDelete {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(0.8);
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 0;
+      display: none;
+    }
+  }
+  
+  td.delete-button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  td.delete-button button {
+    position: relative;
+    z-index: 1;
+  }
+  
+  td.delete-button button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #000;
-    padding: 10px 20px;
-    position: fixed;
-    top: 50px;
-    left: 0;
     bottom: 0;
-    width: 200px;
-    z-index: 999;
-  }
-  
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    margin: 10px 0;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-  
-  main {
-    padding: 80px 20px 20px;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .search-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-  }
-  
-  .search-container input[type="text"] {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    background-color: #3d3d3d;
-    color: #fff;
-  }
-  
-  .product-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #3d3d3d;
-  }
-  
-  .product-table th,
-  .product-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    color: #fff;
-  }
-  
-  .product-table th {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  .product-table td img {
-    width: 50px;
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  .add-product-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-  
-  .add-product-form label {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  
-  .add-product-form input[type="text"],
-  .add-product-form input[type="number"] {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    background-color: #3d3d3d;
-    color: #fff;
-  }
-  
-  .add-product-form button {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .add-product-form button:hover {
-    background-color: #333;
+    background-color: #d32f2f;
+    transform-origin: left;
+    animation: rowDelete 0.5s linear;
   }
   

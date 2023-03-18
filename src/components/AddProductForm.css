@@ -4,52 +4,52 @@ form {
   align-items: center;
   border: none;
   padding: 20px;
-  background-color: #222; /* dark background color */
-  color: #ddd; /* light text color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
-  animation: fadeIn 0.5s ease-out; /* fade-in animation */
-  font-family: "Space Mono", monospace; /* retrofuturistic font */
+  background-color: #222;
+  color: #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-out;
+  font-family: "Space Mono", monospace;
   border-radius: 5px;
-  margin-bottom: 20px; /* add some bottom margin */
+  margin-bottom: 20px;
 }
 
 form label {
   font-weight: bold;
-  text-transform: uppercase; /* uppercase labels */
+  text-transform: uppercase;
   margin-bottom: 10px;
-  letter-spacing: 1px; /* add some letter spacing */
+  letter-spacing: 1px;
 }
 
 form input[type="text"],
 form input[type="number"] {
   border: none;
-  background-color: #333; /* dark input background color */
-  color: #ddd; /* light input text color */
+  background-color: #333;
+  color: #ddd;
   padding: 10px;
   font-size: 14px;
-  font-family: "Space Mono", monospace; /* retrofuturistic font */
+  font-family: "Space Mono", monospace;
   border-radius: 5px;
   margin-bottom: 10px;
-  width: 100%; /* make input fields full width */
+  width: 100%;
 }
 
 form input[type="submit"] {
-  background-color: #ffea00; /* yellow submit button color */
-  color: #222; /* dark submit button text color */
+  background-color: #ffea00;
+  color: #222;
   border: none;
   padding: 10px 15px;
   font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* subtle shadow effect */
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* button hover animation */
-  margin-top: 20px; /* add some top margin */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  margin-top: 20px;
 }
 
 form input[type="submit"]:hover {
-  transform: translateY(-3px); /* move button up slightly on hover */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* stronger shadow effect on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadeIn {
@@ -61,5 +61,23 @@ form input[type="submit"]:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  animation: light 1s forwards;
+}
+
+@keyframes light {
+  0% {
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.75),
+      0 0 15px 5px rgba(255, 255, 255, 0.5),
+      0 0 30px 10px rgba(255, 255, 255, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0),
+      0 0 15px 5px rgba(255, 255, 255, 0),
+      0 0 30px 10px rgba(255, 255, 255, 0);
   }
 }
