@@ -1,9 +1,12 @@
 /* App.css */
 body {
-    background-color: #1c1c1c; /* dark background color */
-    color: #ccc; /* light text color */
-    font-family: "Roboto Mono", monospace; /* futuristic font */
+    background: linear-gradient(to bottom, #0c0c0c, #767575);
+    background-attachment: fixed;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
   }
+  
+  
   
   /* ProductTable.css */
   table {

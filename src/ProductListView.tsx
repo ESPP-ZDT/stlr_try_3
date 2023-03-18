@@ -51,7 +51,10 @@ const ProductList = () => {
 
   return (
     <div>
-      <input type="text" value={searchQuery} onChange={handleSearch} className="search-bar" />
+      <>
+      <label htmlFor="searchInput">Search by title:</label>
+      <input id="searchInput" type="text" value={searchQuery} onChange={handleSearch} className="search-bar" />
+      </>
       <AddProductForm onAdd={handleAdd} />
       <ProductTable products={filteredProducts} onDelete={handleDelete} />
     </div>
