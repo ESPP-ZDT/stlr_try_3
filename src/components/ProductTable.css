@@ -2,25 +2,43 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  font-family: "Roboto Mono", monospace; 
-  background-color: #1c1c1c; 
-  color: #ccc; 
+  font-family: "Roboto Mono", monospace;
+  background-color: #1c1c1c;
+  color: #ccc;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.5s ease-out;
-  
 }
 
 th {
   font-weight: bold;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   border: none;
-  color: #ffea00; 
-  background: conic-gradient(from 0.01turn at 10% 30%,rgb(37, 31, 37), #1c1c1c, #1c1c1c, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  
+  color: #ffea00;
+  background: conic-gradient(
+    from 0.01turn at 10% 30%,
+    rgb(37, 31, 37),
+    #1c1c1c,
+    #1c1c1c,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
   letter-spacing: 1px;
   font-size: 14px;
-   
   padding: 10px;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+  padding-top: 60%;
+  box-shadow: 3px 4px 8px rgba(51, 54, 251, 0.4);
+  
+}
+
+img:hover {
+  max-width: 385%;
+  transition: max-width 0.2s ease-out;
+  z-index: 2;
 }
 
 th:last-child {
@@ -28,34 +46,58 @@ th:last-child {
   white-space: nowrap;
 }
 
+th:first-child {
+  width: 3%;
+  white-space: nowrap;
+}
+
 td {
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 10px;
-  background: conic-gradient(from 0.2turn at 99% 100%,rgb(37, 31, 37), #1c1c1c, #1c1c1c, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-  
+  background: conic-gradient(
+    from 0.2turn at 99% 100%,
+    rgb(37, 31, 37),
+    #1c1c1c,
+    #1c1c1c,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  vertical-align: top;
+  z-index: 1;
+}
+
+td:first-child {
+  position: relative;
+  padding-left: 0;
+}
+
+td:first-child img {
+  position: relative;
+  z-index: 2;
+}
+
+td:first-child + td {
+  margin-left: -60px;
 }
 
 button {
-  background-color: #ffea00; 
-  color: #1c1c1c; 
+  background-color: #ffea00;
+  color: #1c1c1c;
   border: none;
   padding: 10px 15px;
   font-size: 14px;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
 button:hover {
-  transform: translateY(-3px); 
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
-
-
-
 
 td.delete-button {
   position: relative;
@@ -67,7 +109,6 @@ td.delete-button button {
   z-index: 1;
   float: right; /* Add this line to float the button to the right */
 }
-
 td.delete-button button::before {
   content: "";
   position: absolute;
@@ -80,9 +121,6 @@ td.delete-button button::before {
   transform-origin: left;
   animation: rowDelete 0.5s linear;
 }
-
-
-
 
 @keyframes fadeIn {
   from {
@@ -108,7 +146,12 @@ td.delete-button button::before {
     transform: scale(0.5);
     opacity: 0;
     display: none;
-    background: linear-gradient(to right, rgba(255, 23, 68, 0.5) 0%, rgba(255, 23, 68, 0.7) 50%, rgba(255, 23, 68, 0.5) 100%);
+    background: linear-gradient(
+      to right,
+      rgba(255, 23, 68, 0.5) 0%,
+      rgba(255, 23, 68, 0.7) 50%,
+      rgba(255, 23, 68, 0.5) 100%
+    );
   }
 }
 
@@ -122,9 +165,6 @@ td.delete-button button {
   z-index: 1;
 }
 
-
-
-
 td.delete-button button::before {
   content: "";
   position: absolute;
@@ -133,11 +173,15 @@ td.delete-button button::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(255, 23, 68, 0.5) 0%, rgba(255, 23, 68, 0.7) 50%, rgba(255, 23, 68, 0.5) 100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 23, 68, 0.5) 0%,
+    rgba(255, 23, 68, 0.7) 50%,
+    rgba(255, 23, 68, 0.5) 100%
+  );
   transform-origin: left;
   animation: rowDelete 0.5s ease-in-out;
 }
-
 
 td.delete-button button:active::before {
   content: "";
@@ -160,5 +204,3 @@ td.delete-button button:active::before {
     background-color: #ff1744;
   }
 }
-
-
