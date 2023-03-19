@@ -28,17 +28,49 @@ th {
 }
 
 img {
+  padding-top: 15%;
   max-width: 100%;
   vertical-align: top;
-  padding-top: 60%;
-  box-shadow: 3px 4px 8px rgba(51, 54, 251, 0.4);
-  
+  padding-top: relative;
+  border-bottom: 20px solid #1b1b1b;
+
+  filter: grayscale(70%);
+  border-image: repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 10px,
+      rgba(0, 0, 0, 0.8) 10px,
+      rgba(52, 109, 233, 0.929) 15px
+    )
+    1;
+  transition: all 0.3s ease-in-out;
 }
 
 img:hover {
-  max-width: 385%;
-  transition: max-width 0.2s ease-out;
-  z-index: 2;
+  max-width: 300%;
+  transform: scale(1.05);
+  filter: grayscale(30%);
+  border-bottom: 30px solid #1b1b1b;
+  border-image: repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 10px,
+      rgba(0, 0, 0, 0.9) 10px,
+      rgba(52, 109, 233, 1) 15px
+    )
+    1;
+}
+
+td:last-child :hover {
+  position: relative;
+  background-image: repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 10px,
+      rgba(0, 0, 0, 0.9) 10px,
+      rgba(52, 109, 233, 1) 15px
+    )
+    1;
 }
 
 th:last-child {
@@ -47,7 +79,7 @@ th:last-child {
 }
 
 th:first-child {
-  width: 3%;
+  width: relative;
   white-space: nowrap;
 }
 
@@ -64,7 +96,6 @@ td {
     rgba(0, 0, 0, 0.3)
   );
   vertical-align: top;
-  z-index: 1;
 }
 
 td:first-child {
@@ -74,7 +105,6 @@ td:first-child {
 
 td:first-child img {
   position: relative;
-  z-index: 2;
 }
 
 td:first-child + td {
@@ -109,18 +139,6 @@ td.delete-button button {
   z-index: 1;
   float: right; /* Add this line to float the button to the right */
 }
-td.delete-button button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #d32f2f;
-  transform-origin: left;
-  animation: rowDelete 0.5s linear;
-}
 
 @keyframes fadeIn {
   from {
@@ -153,16 +171,6 @@ td.delete-button button::before {
       rgba(255, 23, 68, 0.5) 100%
     );
   }
-}
-
-td.delete-button {
-  position: relative;
-  overflow: hidden;
-}
-
-td.delete-button button {
-  position: relative;
-  z-index: 1;
 }
 
 td.delete-button button::before {
