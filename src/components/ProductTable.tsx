@@ -37,7 +37,7 @@ const ProductTable: React.FC<Props> = ({ products, onDelete }) => {
         <td>{product.category}</td>
         
         <td className="actions-column">
-          <button onClick={() => onDelete(product.id)}>Delete</button>
+          <button className="delete-button-styles" onClick={() => onDelete(product.id)}>Delete</button>
         </td>
       </tr>
     ))}

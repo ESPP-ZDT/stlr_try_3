@@ -47,7 +47,7 @@ img {
 }
 
 img:hover {
-  max-width: 300%;
+  max-width: 250%;
   transform: scale(1.05);
   filter: grayscale(30%);
   border-bottom: 30px solid #1b1b1b;
@@ -98,18 +98,24 @@ td {
   vertical-align: top;
 }
 
-td:first-child {
-  position: relative;
-  padding-left: 0;
+.delete-button-styles {
+  background-color: rgb(177, 1, 1);
+  animation: awesome-animation 1s ease-in-out;
 }
 
-td:first-child img {
-  position: relative;
+@keyframes awesome-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-td:first-child + td {
-  margin-left: -60px;
-}
+
 
 button {
   background-color: #ffea00;
@@ -129,7 +135,7 @@ button:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-td.delete-button button {
+.delete-button button {
   position: relative;
   z-index: 1;
   float: right; /* Add this line to float the button to the right */
