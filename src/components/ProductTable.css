@@ -28,7 +28,7 @@ th {
 }
 
 img {
-  padding-top: 15%;
+  padding-top: 18%;
   max-width: 100%;
   vertical-align: top;
   padding-top: relative;
@@ -129,15 +129,31 @@ button:hover {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-td.delete-button {
-  position: relative;
-  overflow: hidden;
-}
-
 td.delete-button button {
   position: relative;
   z-index: 1;
   float: right; /* Add this line to float the button to the right */
+  background-color: #ff0000; /* Add this line to make the button red */
+  color: #fff; /* Add this line to make the text white */
+  transition: background-color 0.3s ease-in-out; /* Add this line to animate the background color */
+}
+
+td.delete-button button:hover {
+  background-color: #ff4d4d; /* Add this line to change the background color on hover */
+  transform: scale(1.1); /* Add this line to scale the button on hover */
+}
+
+td.delete-button button:active::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #acacac;
+  transform-origin: left;
+  animation: deleteAnimate 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -175,18 +191,7 @@ td.delete-button button {
 
 
 
-td.delete-button button:active::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #acacac;
-  transform-origin: left;
-  animation: deleteAnimate 0.5s ease-in-out;
-}
+
 
 @keyframes deleteAnimate {
   0% {
