@@ -27,7 +27,12 @@ const ProductTable: React.FC<Props> = ({ products, onDelete }) => {
   <tbody>
     {products.map((product) => (
       <tr key={product.id}>
-        <td><img src={product.thumbnail} alt={product.title} /></td>
+        <td>
+  {
+    <img src={product.thumbnail} alt={product.title} /> 
+    
+  }
+</td>
         <td>{product.title}</td>
         <td>{product.description}</td>
         <td>{product.price}</td>

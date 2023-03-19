@@ -27,12 +27,20 @@ th {
   padding: 10px;
 }
 
+.defaultprod{
+  max-width: 100%;
+ 
+  
+}
+
 img {
+  background-image: url('../skybox2.png');
+  background-size: 300%;
   padding-top: 18%;
   max-width: 100%;
   vertical-align: top;
-  padding-top: relative;
   border-bottom: 20px solid #1b1b1b;
+  object-fit: contain;
 
   filter: grayscale(70%);
   border-image: repeating-radial-gradient(
@@ -47,6 +55,7 @@ img {
 }
 
 img:hover {
+  
   max-width: 250%;
   transform: scale(1.05);
   filter: grayscale(30%);
@@ -79,6 +88,12 @@ th:last-child {
 }
 
 th:first-child {
+  
+  width: relative;
+  white-space: nowrap;
+}
+td:first-child {
+  background-image: url('../floor.png');
   width: relative;
   white-space: nowrap;
 }
